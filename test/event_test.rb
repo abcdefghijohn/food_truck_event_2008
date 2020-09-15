@@ -59,7 +59,7 @@ class EventTest <  Minitest::Test
     food_truck2.stock(item3, 25)
     food_truck3.stock(item1, 65)
 
-    assert_equal [food_truck1, food_truck3], even.food_trucks_that_sell(item1)
-    assert_equal [food_truck2], even.food_trucks_that_sell(item4)
+    assert_equal [food_truck1, food_truck3], event.food_trucks_that_sell(item1)
+    assert_equal [food_truck2], event.food_trucks_that_sell(item4)
   end
 end
