@@ -22,4 +22,14 @@ class Event
       truck.check_stock(item) > 0
     end
   end
+
+  def total_inventory
+    @food_trucks.reduce(Hash.new{ |h,k| h[k] = {:quantity => 0, :food_trucks => [] }}) do |hash, food_truck|
+      food_truck.inventory.each do |item, amount|
+        hash[0][:quantity] += amount #getting symbol to integer conversion error but in pry both come out as integer
+        hash[item][:food_trucks] << food_truck
+      end
+    end
+    hash
+  end
 end
